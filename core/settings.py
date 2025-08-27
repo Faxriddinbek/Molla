@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'apps.acount',
     'apps.bloc',
+    'apps.calculate',
 ]
 
 MIDDLEWARE = [

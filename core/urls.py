@@ -23,8 +23,8 @@ from core.settings import STATIC_ROOT, MEDIA_ROOT
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('bloc', include('apps.bloc.urls', namespace='bloc')),
-    path('home', include('apps.bloc.urls', namespace='home'))
+    path('', include('apps.bloc.urls', namespace='home')),
+    path('contact/', include('apps.acount.urls', namespace='contact'))
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root = STATIC_ROOT)
