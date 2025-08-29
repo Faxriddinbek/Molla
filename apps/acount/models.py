@@ -1,13 +1,18 @@
+from django.utils import timezone
+
 from django.db import models
 
 
 class ContactModel(models.Model):
     full_name = models.CharField(max_length=128)
     email = models.EmailField()
-    phone_number = models.CharField(max_length=15, null=True, blank=True)
-    subject = models.CharField(max_length=255, null=True, blank=True)
+    phone_number = models.CharField(
+        max_length=15, null=True, blank=True
+    )
+    subject = models.CharField(
+        max_length=255, null=True, blank=True
+    )
     message = models.TextField()
-    result = models.IntegerField(default=0)
 
     is_read = models.BooleanField(default=False)
     comment = models.TextField(null=True, blank=True)

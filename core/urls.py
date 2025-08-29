@@ -19,13 +19,11 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-from core.settings import STATIC_ROOT, MEDIA_ROOT
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('apps.bloc.urls', namespace='home')),
-    path('contact/', include('apps.acount.urls', namespace='contact'))
+    path('', include('apps.bloc.urls', namespace='bloc')),
+    path('contact/', include('apps.acount.urls', namespace='home')),
 ]
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root = STATIC_ROOT)
-    urlpatterns += static(settings.MEDIA_URL, document_root = MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
