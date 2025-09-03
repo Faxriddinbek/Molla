@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from datetime import timedelta
 from django.db.models import Count
 from django.utils import timezone
@@ -49,30 +49,22 @@ def check_blog_view(request, blog):
 
 
 def blog_detail(request, pk):
-    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-    if x_forwarded_for:
-        user_ip = x_forwarded_for.split(',')[0]
-    else:
-        user_ip = request.META.get('REMOTE_ADDR')
-    try:
-        blog = BlogModel.objects.get(id=pk)
-    except BlogModel.DoesNotExist:
-        return render(request, '404.html')
-
+    blog = get_object_or_404(BlogModel, id=pk)
     check_blog_view(request, blog)
 
     categories = BlogCategoryModel.objects.all()
     tags = BlogTagModel.objects.all()
-    related_blogs = BlogTagModel.objects.filter(
-        category__in = blog.category.all()
+
+    # related blogs by same categories
+    related_blogs = BlogModel.objects.filter(
+        category__in=blog.category.all()
     ).exclude(id=blog.id).distinct()
 
     most_popular_blogs = (
         BlogModel.objects
-        .annotate(views_count=Count('views', distinct=True))
+        .annotate(views_count=Count('views__user_ip', distinct=True))
         .order_by('-views_count')[:4]
     )
-
 
     context = {
         "blog": blog,
@@ -80,13 +72,8 @@ def blog_detail(request, pk):
         "tags": tags,
         "related_blogs": related_blogs,
         "most_popular_blogs": most_popular_blogs,
-
     }
-
-    return render(
-        request, 'blog-detail.html',
-        context
-    )
+    return render(request, 'blog-detail.html', context)
 
 def home_page_views(request):
     return render(request, 'home.html')
