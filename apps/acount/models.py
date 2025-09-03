@@ -3,6 +3,11 @@ from django.utils import timezone
 from django.db import models
 
 
+class BaseModel(models.Model):
+    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
 class ContactModel(models.Model):
     full_name = models.CharField(max_length=128)
     email = models.EmailField()
