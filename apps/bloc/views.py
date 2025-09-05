@@ -87,14 +87,14 @@ def blog_detail_views(request):
 def cart_page_views(request):
     return render(request, 'cart.html')
 
-def category_page_views(request):
-    return render(request, 'category.html')
+def product_page_views(request):
+    return render(request, 'products.html')
 
 def checkout_page_views(request):
     return render(request, 'checkout.html')
 
-# def contact_page_views(request):
-#     return render(request, 'contact.html')
+def contact_page_views(request):
+    return render(request, 'contact.html')
 
 def dashboard_page_views(request):
     return render(request, 'dashboard.html')
@@ -110,3 +110,7 @@ def product_det_page_views(request):
 
 def wishlist_page_views(request):
     return render(request, 'wishlist.html')
+
+
+def pages_about_views(request):
+    return render(request, 'about.html')

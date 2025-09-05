@@ -1,9 +1,6 @@
 from django.shortcuts import render, redirect
 
 from apps.acount.forms import ContactForm
-#
-# def contact_page_views(request):
-#     return render(request, 'contact.html')
 
 
 def contact_page_views(request):

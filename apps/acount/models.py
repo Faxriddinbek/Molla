@@ -1,5 +1,3 @@
-from django.utils import timezone
-
 from django.db import models
 
 
@@ -7,8 +5,11 @@ class BaseModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        abstract = True
 
-class ContactModel(models.Model):
+
+class ContactModel(BaseModel):
     full_name = models.CharField(max_length=128)
     email = models.EmailField()
     phone_number = models.CharField(
