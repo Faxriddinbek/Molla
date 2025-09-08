@@ -1,6 +1,6 @@
 from django.urls import path
 
-from apps.bloc.views import about_page_views, home_page_views, page_views_404, blog_detail_views, cart_page_views,  product_page_views, checkout_page_views, dashboard_page_views, faq_page_views, login_page_views, product_det_page_views, wishlist_page_views, blog_detail, contact_page_views, pages_about_views
+from apps.bloc.views import about_page_views, home_page_views, page_views_404, blog_detail_views, cart_page_views,  product_page_views, checkout_page_views, dashboard_page_views, faq_page_views, login_page_views, product_det_page_views, wishlist_page_views, blog_detail, pages_about_views
 app_name = 'bloc'
 
 urlpatterns = [
@@ -12,7 +12,7 @@ urlpatterns = [
     path('cart/', cart_page_views, name = 'cart'),
     path('product/', product_page_views, name = 'product'),
     path('checkout/', checkout_page_views, name = 'checkout'),
-    path('contact/', contact_page_views, name = 'contact'),
+    # path('contact/', contact_page_views, name = 'contact'),
     path('dashboard/', dashboard_page_views, name = 'dashboard'),
     path('faq/', faq_page_views, name = 'faq'),
     path('login/', login_page_views, name = 'login'),

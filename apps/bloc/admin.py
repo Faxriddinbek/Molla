@@ -2,11 +2,7 @@ from django.contrib import admin
 
 from apps.bloc.models import BlogCategoryModel, BlogTagModel, BlocAuthorModel, BlogModel, BlogViewModel
 
-# admin.site.register(BlocTagModel)
-# admin.site.register(BlocCategoryModel)
-# admin.site.register(BaseModel)
-# admin.site.register(BlogAuthor)
-# admin.site.register(BlogModel)
+
 
 @admin.register(BlogCategoryModel)
 class BlogCategoryModelAdmin(admin.ModelAdmin):

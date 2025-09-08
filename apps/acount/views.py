@@ -7,9 +7,9 @@ def contact_page_views(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            contact = form.save(commit=False)
-            contact.result = 1313
-            contact.save()
+            form.save(commit=False)
+            form.result = 1313
+            form.save()
             return redirect('home:contact')
         else:
             errors = []
@@ -17,11 +17,9 @@ def contact_page_views(request):
                 for error in value:
                     errors.append(error)
             context = {
-                "errors": errors,
-                "form" : form,
+                "errors": errors
             }
             return render(request, 'contact.html', context)
 
     else:
-        form = ContactForm()
-        return render(request, 'contact.html', {'form': form})
+        return render(request, 'contact.html')

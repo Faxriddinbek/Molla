@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-08 12:10+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: template/about.html:8
+#, fuzzy
+#| msgid "About"
+msgid "About us 2"
+msgstr "Biz haqimizda"
+
+#: template/about.html:8
+msgid "Pages"
+msgstr "Bo'lim"
+
+#: template/about.html:26
+msgid "Who We Are"
+msgstr "Biz haqimizda"
+
+#: template/about.html:27
+msgid ""
+"Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, "
+"eget blandit nunc tortor eu nibh. Suspendisse potenti. Sed egestas, ante et "
+"vulputate volutpat, uctus metus libero eu augue. Morbi purus libero, "
+"faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent "
+"elementum hendrerit tortor. Sed semper lorem at felis."
+msgstr "Biz mijozlarimizga sifatli xizmat va ishonchli yechimlarni taqdim etishga intiladigan jamoamiz."
+    "Har bir loyihada bizning asosiy maqsadimiz — insonlarga foyda keltirish, hayotni osonlashtiradigan innovatsion va qulay yechimlar yaratishdir."
+
+#: template/about.html:41
+msgid "Design Quality"
+msgstr "Dizayn sifati"
+
+#: template/about.html:42
+msgid ""
+"Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus "
+"metus libero <br>eu augue."
+msgstr "Harakat va rivojlanish — bizning asosiy qadriyatimiz. Har bir qadamimiz mustahkam asosga tayanadi va doimo oldinga intilishimizni ta’minlaydi."
+    "<br>"
+    "Bizning jamoamiz yangilik yaratish va sifatni oshirish orqali kelajak sari odimlaydi."
+
+#: template/about.html:53
+msgid "Professional Support"
+msgstr "Professional qo‘llab-quvvatlash"
+
+#: template/about.html:54
+msgid ""
+"Praesent dapibus, neque id cursus faucibus, <br>tortor neque egestas augue, "
+"eu vulputate <br>magna eros eu erat. "
+msgstr ""
+
+#: template/about.html:65
+msgid "Made With Love"
+msgstr ""
+
+#: template/about.html:66
+msgid ""
+"Pellentesque a diam sit amet mi ullamcorper <br>vehicula. Nullam quis massa "
+"sit amet <br>nibh viverra malesuada."
+msgstr ""
+
+#: template/about.html:83
+msgid "Happy Customer"
+msgstr ""
+
+#: template/about.html:92
+msgid "Years in Business"
+msgstr ""
+
+#: template/about.html:101
+msgid "Return Clients"
+msgstr ""
+
+#: template/about.html:110
+msgid "Awards Won"
+msgstr ""
+
+#: template/about.html:119
+msgid "Meet Our Team"
+msgstr ""
+
+#: template/layout/header-base.html:73
+msgid "Home"
+msgstr "Asosiy"
+
+#: template/layout/header-base.html:78
+msgid "Products"
+msgstr "Maxshulot"
+
+#: template/layout/header-base.html:83
+msgid "Blogs"
+msgstr ""
+
+#: template/layout/header-base.html:88
+msgid "About"
+msgstr "Biz haqimizda"
+
+#: template/layout/header-base.html:93
+msgid "Contact"
+msgstr "Aloqa"

@@ -3,8 +3,7 @@ from datetime import timedelta
 from django.db.models import Count
 from django.utils import timezone
 from .models import BlogModel, BlogCategoryModel, BlogTagModel, BlogViewModel
-
-
+from apps.shop.models import ProductCategory, ProductSize, ProductColor, ProductModel, ProductBrand
 def about_page_views(request):
     blogs = BlogModel.objects.filter(
         status=BlogModel.BlogStatus.PUBLISHED
@@ -88,13 +87,61 @@ def cart_page_views(request):
     return render(request, 'cart.html')
 
 def product_page_views(request):
+    categories = ProductCategory.objects.all()
+    brands = ProductBrand.objects.all()
+    colors = ProductColor.objects.all()
+    sizes = ProductSize.objects.all()
+    products = ProductModel.objects.all()
+
+    cat_id = request.GET.get('cat')
+    brand_id = request.GET.get('brand_id')
+    color_id = request.GET.get('color_id')
+    size_id = request.GET.get('size_id')
+    q = request.GET.get('q')
+    if cat_id:
+        products = products.filter(categories=cat_id)
+    if brand_id:
+        products = products.filter(brand=brand_id)
+    if color_id:
+        products = products.filter(products_quantity__color=color_id)
+    if size_id:
+        products = products.filter(products_quantity__size=size_id)
+    if q:
+        products = products.filter(title__icontains=q)
+
+    context = {
+        "categories": categories,
+        "brands": brands,
+        "colors": colors,
+        "sizes": sizes,
+        "products": products,
+    }
+    return render(request, 'products.html', context)
     return render(request, 'products.html')
 
 def checkout_page_views(request):
     return render(request, 'checkout.html')
 
-def contact_page_views(request):
-    return render(request, 'contact.html')
+# def contact_page_views(request):
+#     # if request.method == "POST":
+#     #     form = ContactForm(request.POST)
+#     #     if form.is_valid():
+#     #         form.save(commit=False)
+#     #         form.result = 1313
+#     #         form.save()
+#     #         return redirect('bloc:contact')
+#     #     else:
+#     #         errors = []
+#     #         for key, value in form.errors.items():
+#     #             for error in value:
+#     #                 errors.append(error)
+#     #         context = {
+#     #             "errors": errors
+#     #         }
+#     #         return render(request, 'contact.html', context)
+#     #
+#     # else:
+#         return render(request, 'contact.html')
 
 def dashboard_page_views(request):
     return render(request, 'dashboard.html')
