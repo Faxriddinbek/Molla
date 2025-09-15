@@ -42,7 +42,7 @@ def check_blog_view(request, blog):
     ).order_by('-created_at').first()
 
     # If never viewed OR last view was more than 7 days ago → create new record
-    if not last_view or (timezone.now() - last_view.created_at) > timedelta(minutes=1):
+    if not last_view or (timezone.now() - last_view.created_at) > timedelta(days=1):
         BlogViewModel.objects.create(user_ip=user_ip, blog=blog)
 
 
@@ -149,8 +149,8 @@ def dashboard_page_views(request):
 def faq_page_views(request):
     return render(request, 'faq.html')
 
-def login_page_views(request):
-    return render(request, 'login.html')
+# def login_page_views(request):
+#     return render(request, 'login.html')
 
 def product_det_page_views(request):
     return render(request, 'product-detail.html')

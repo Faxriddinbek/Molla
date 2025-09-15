@@ -30,6 +30,7 @@ urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('apps.bloc.urls', namespace='bloc')),
+    path('accounts/', include('apps.accounts.urls', namespace='accounts')),
     path('contact/', include('apps.acount.urls', namespace='home')),
 )
 if settings.DEBUG:
