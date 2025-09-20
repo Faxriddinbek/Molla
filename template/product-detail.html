@@ -9,8 +9,8 @@
             <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
                 <div class="container d-flex align-items-center">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Products</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'bloc:home' %}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'product:list' %}">Products</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Centered</li>
                     </ol>
 
@@ -36,7 +36,7 @@
                                 <div class="product-gallery product-gallery-vertical">
                                     <div class="row">
                                         <figure class="product-main-image">
-                                            <img id="product-zoom" src="{% static 'assets/images/products/single/centered/1.jpg' %}" data-zoom-image="{% static 'assets/images/products/single/centered/1-big.jpg' %}" alt="product image">
+                                            <img id="product-zoom" src="#" data-zoom-image="{% static 'assets/images/products/single/centered/1-big.jpg' %}" alt="product image">
 
                                             <a href="#" id="btn-product-gallery" class="btn-product-gallery">
                                                 <i class="icon-arrows"></i>

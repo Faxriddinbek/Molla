@@ -1,5 +1,5 @@
 from datetime import datetime
-
+import pytz
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 
@@ -67,6 +67,23 @@ class ProductModel(BaseModel):
         validators=[MaxValueValidator(100), MinValueValidator(1)]
     )
 
+    def is_new(self):
+        tashkent_tz = pytz.timezone('Asia/Tashkent')
+        now = datetime.now(tashkent_tz)
+
+        # Ensure created_at is timezone-aware
+        if self.created_at.tzinfo is None:
+            created_at = tashkent_tz.localize(self.created_at)
+        else:
+            created_at = self.created_at.astimezone(tashkent_tz)
+
+        diff = now - created_at
+        return diff.days <= 3
+
+    def is_discount(self):
+        if self.discount:
+            return self.discount > 0
+        return False
 
     def __str__(self):
         return self.title

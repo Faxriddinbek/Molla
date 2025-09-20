@@ -1,4 +1,4 @@
-from  django import forms
+from django import forms
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -7,13 +7,14 @@ from django.contrib.auth.models import User
 class RegisterModelForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ['username', 'email' , 'password1', 'password2']
+        fields = ['username', 'email', 'password1', 'password2']
 
 
 class LoginForm(forms.Form):
-    def __init__(self, *args , **kwargs):
+    def __init__(self, *args, **kwargs):
         self.request = kwargs.pop('request', None)
         super().__init__(*args, **kwargs)
+
     username = forms.CharField()
     password = forms.CharField()
 
@@ -22,7 +23,7 @@ class LoginForm(forms.Form):
         password = self.cleaned_data.get('password')
 
         context = self.get_context()
-        credentials = {'username':username, 'password': password}
+        credentials = {'username': username, 'password': password}
 
         user = authenticate(request=context.get('request'), **credentials)
 
@@ -30,5 +31,5 @@ class LoginForm(forms.Form):
             self.cleaned_data['user'] = user
         else:
             raise forms.ValidationError("Username or password is incorrect")
-        
+
         return super().clean()

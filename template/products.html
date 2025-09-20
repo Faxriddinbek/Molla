@@ -16,7 +16,7 @@
             <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
                 <div class="container">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'bloc:home' %}">Home</a></li>
                         <li class="breadcrumb-item"><a href="#">Shop</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Grid 3 Columns</li>
                     </ol>
@@ -101,7 +101,7 @@
                                                     <span class="product-label label-new">New</span>
                                                 {% endif %}
 
-                                                <a href="contact.html">
+                                                <a href="{% url 'product:detail' pk=product.id%}">
                                                     <img src="{{ product.image.url }}" alt="Product image" class="product-image">
                                                 </a>
 

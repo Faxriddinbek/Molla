@@ -8,7 +8,7 @@ from .models import (
 
 class ProductImageInline(admin.TabularInline):
     model = ProductImageModel
-    extra = 1  # Number of empty forms to display
+    extra = 1
     fields = ['image']
     verbose_name = 'Product Image'
     verbose_name_plural = 'Product Images'
@@ -16,7 +16,7 @@ class ProductImageInline(admin.TabularInline):
 
 class ProductQuantityInline(admin.TabularInline):
     model = ProductQuantity
-    extra = 1  # Number of empty forms to display
+    extra = 1
     fields = ['quantity', 'sizes', 'colors']
     verbose_name = 'Product Quantity'
     verbose_name_plural = 'Product Quantities'

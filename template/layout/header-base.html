@@ -63,7 +63,7 @@
                 <nav class="main-nav">
                     <ul class="menu sf-arrows">
                         {% url 'bloc:home' as home_url %}
-                        {% url 'bloc:product' as product_url %}
+                        {% url 'product:list' as product_url %}
                         {% url 'bloc:blog' as blog_url %}
                         {% url 'bloc:about' as about_url %}
                         {% url 'home:contact' as contact_url %}
@@ -75,7 +75,7 @@
                         <li class="{% if request.path == product_url %}
                                 	megamenu-container active
                                 {% endif %} ">
-                            <a href="{% url 'bloc:product' %}">{% trans 'Products' %}</a>
+                            <a href="{% url 'product:list' %}">{% trans 'Products' %}</a>
                         </li>
                         <li class="{% if request.path == blog_url %}
                                 	megamenu-container active
@@ -99,7 +99,7 @@
             <div class="header-right">
                 <div class="header-search">
                     <a href="#" class="search-toggle" role="button" title="Search"><i class="icon-search"></i></a>
-                    <form action="{% url 'bloc:product' %}" method="get">
+                    <form action="{% url 'product:list' %}" method="get">
                         <div class="header-search-wrapper">
                             <label for="q" class="sr-only">Search</label>
                             <input type="search" class="form-control" name="q" id="q" placeholder="Search in..."

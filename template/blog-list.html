@@ -11,8 +11,8 @@
             <nav aria-label="breadcrumb" class="breadcrumb-nav mb-3">
                 <div class="container">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Blog</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'bloc:home' %}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'bloc:blog' %}">Blog</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Listing</li>
                     </ol>
                 </div><!-- End .container -->
@@ -42,7 +42,7 @@
                                                 <span class="meta-separator">|</span>
                                                 <a href="#">{{ blog.created_at|date:"M d, Y"}}</a>
                                                 <span class="meta-separator">|</span>
-                                                <a href="#">2 Comments</a>
+                                                <a href="#">Viws: {{ blog.views_count }}</a>
                                             </div><!-- End .entry-meta -->
 
                                             <h2 class="entry-title">
